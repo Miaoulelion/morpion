@@ -1,14 +1,16 @@
 package jeuxDeGrilles;
 
 public class Morpion implements JeuxDeGrilles {
-	int nbLig;
-	int nbCol;
-	String [][] Grille=new String[nbLig][nbCol];
+	private int nbLig;
+	private int nbCol;
+	private boolean FinDePartie;
+	private String [][] Grille=new String[nbLig][nbCol];
 	
 	
 	public Morpion(int nbCol, int nbLig) {
 		this.nbCol=nbCol;
 		this.nbLig=nbLig;
+		this.FinDePartie=false;
 	}
 	
 	
@@ -28,14 +30,19 @@ public class Morpion implements JeuxDeGrilles {
 		
 	}
 	
-	public boolean estGagné(int numCol, int numLig) {
-		return false;
-	}
 	
 	public boolean estAligné(int numCol, int numLig) {
 		return false;
 	}
 	
+	public boolean estGagné() {
+		return false;
+	}
+	
+	
+	public boolean getFinDePartie() {
+		return this.FinDePartie;
+	}
 	
 
 }
