@@ -1,6 +1,7 @@
-package principal;
+package appliJeu;
 
 import jeuxDeGrilles.JeuxDeGrilles;
+import jeuxDeGrilles.Morpion;
 
 public class Main {
 
@@ -8,11 +9,16 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		JeuxDeGrilles Jeu = new Morpion(6,6);
+		Jeu.PlacerPion(2, 2, "X");
+		Jeu.PlacerPion(4, 1, "V");
 		
-		
-		while(true) {
+		System.out.println(Jeu.toString());
+		/*
+		while(Jeu.getFinDePartie()) {
 			
-		}
+			
+			
+		}*/
 		
 		
 	}
