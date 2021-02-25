@@ -6,6 +6,9 @@ public class Joueur {
 	private Symbole symbole;
 	
 	public Joueur(Symbole symbole) {
+		if(symbole.getValue()==' ') {
+			throw new IllegalArgumentException("Symbole vide ne représente pas un joueur");
+		}
 		this.symbole=symbole;
 		initJoueur();
 	}
