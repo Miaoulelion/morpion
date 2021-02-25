@@ -1,25 +1,23 @@
 package joueurs;
 
-public enum Joueur {
-	
-	Vide(' '), J1('X'), J2('O');
-	
-	private char value;
-	private int score;
+public class Joueur {
 	private boolean vainqueur;
-
-	Joueur(char Symbole) {
-		this.value=Symbole;
+	private int score;
+	private Symbole symbole;
+	
+	public Joueur(Symbole symbole) {
+		this.symbole=symbole;
 		initJoueur();
 	}
+
 	
 	public void initJoueur() {
 		this.vainqueur=false;
 		this.score=0;
 	}
 	
-	public char getValue() {
-		return this.value;
+	public Symbole getSymbole() {
+		return this.symbole;
 	}
 	
 	public void incrementScore() {

@@ -1,24 +1,26 @@
 package jeuxDeGrilles;
 
+import joueurs.Symbole;
+
 public class Morpion implements JeuxDeGrilles {
 	private int nbLig;
 	private int nbCol;
 	private boolean FinDePartie;
-	private String [][] Grille;
+	private Symbole [][] Grille;
 	
 	
 	public Morpion(int nbCol, int nbLig) {
 		this.nbCol=nbCol;
 		this.nbLig=nbLig;
 		this.FinDePartie=false;
-		this.Grille=new String[nbLig][nbCol];
-		Initialisation();
+		this.Grille=new Symbole[nbLig][nbCol];
+		InitialisationGrille();
 	}
 	
-	public void Initialisation() {
+	public void InitialisationGrille() {
 		for(int i=0;i<this.nbLig;++i) {
 			for(int j=0;j<this.nbCol;++j) {
-				this.Grille[i][j]=".";
+				this.Grille[i][j]=Symbole.Vide;
 			}
 		}
 	}
@@ -33,14 +35,14 @@ public class Morpion implements JeuxDeGrilles {
 		s+="\n";
 		for(int i=0;i<this.nbLig;++i) {
 			for(int j=0;j<this.nbCol;++j) {
-				s+="[" + Grille[i][j] + "]";
+				s+="[" + Grille[i][j].getValue() + "]";
 			}
 			s+="\n";
 		}
 		return s;
 	}
 	
-	public void PlacerPion(int numCol, int numLig, String Joueur) {
+	public void PlacerPion(int numCol, int numLig, Symbole Joueur) {
 		if(numCol<1 || numLig<1 || numCol>this.nbCol || numLig>this.nbLig) {
 			throw new IllegalArgumentException("Hors des limites de la grilles.");
 		}
