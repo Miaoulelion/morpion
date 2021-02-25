@@ -1,7 +1,7 @@
 package appliJeu;
 
-import jeuxDeGrilles.JeuxDeGrilles;
-import jeuxDeGrilles.Morpion;
+import jeuxDeGrilles.IGrilles;
+import jeuxDeGrilles.Puissance4;
 import joueurs.Symbole;
 
 public class Main {
@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		JeuxDeGrilles Jeu = new Morpion(6,6);
+		IGrilles Jeu = new Puissance4();
 		Jeu.PlacerPion(2, 2, Symbole.J1);
 		Jeu.PlacerPion(4, 1, Symbole.J2);
 		

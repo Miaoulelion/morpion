@@ -2,7 +2,7 @@ package jeuxDeGrilles;
 
 import joueurs.Symbole;
 
-public interface JeuxDeGrilles {
+public interface IGrilles {
 	
 	public void PlacerPion(int numCol, int numLig, Symbole Joueur);
 	public boolean estGagné(int numCol, int numLig);
