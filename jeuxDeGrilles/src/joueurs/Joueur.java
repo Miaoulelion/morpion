@@ -1,41 +1,41 @@
 package joueurs;
 
-public class Joueur implements IJoueur {
-	private String SymboleJoueur;
-	private int Score;
+public enum Joueur {
+	
+	Vide(' '), J1('X'), J2('O');
+	
+	private char value;
+	private int score;
 	private boolean vainqueur;
-	
-	
-	
-	public Joueur(String Symbole) {
-		if(Symbole.length()!=1) {
-			throw new IllegalArgumentException("Un joueur a un symbole d'un caractère.");
-		}
-		this.SymboleJoueur=Symbole;
-		this.Score=0;
-		this.vainqueur=false;
+
+	Joueur(char Symbole) {
+		this.value=Symbole;
+		initJoueur();
 	}
 	
-	public void AugmenterScore() {
-		++this.Score;
+	public void initJoueur() {
+		this.vainqueur=false;
+		this.score=0;
+	}
+	
+	public char getValue() {
+		return this.value;
+	}
+	
+	public void incrementScore() {
+		++this.score;
 	}
 	
 	public int getScore() {
-		return this.Score;
+		return this.score;
 	}
 	
-	public void AGagné() {
+	public void estVainqueur() {
 		this.vainqueur=true;
 	}
 	
 	public boolean getVainqueur() {
 		return this.vainqueur;
 	}
-	
-	public String getSymbole() {
-		return this.SymboleJoueur;
-	}
-	
-	
 
 }
