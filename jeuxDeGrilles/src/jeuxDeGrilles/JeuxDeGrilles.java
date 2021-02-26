@@ -46,7 +46,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	
 	public void PlacerPion(int numCol, int numLig, Symbole Joueur) {
-		if(EstAutorisé(numCol,numLig)) {
+		if(!EstAutorisé(numCol,numLig)) {
 			throw new IllegalArgumentException("Hors des limites de la grilles ou coup déjà joué.");
 		}
 		this.Grille[numLig-1][numCol-1]=Joueur;
