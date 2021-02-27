@@ -1,5 +1,6 @@
 package jeuxDeGrilles;
 
+import joueurs.Joueur;
 import joueurs.Symbole;
 
 public abstract class JeuxDeGrilles implements Jeux {
@@ -9,6 +10,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private Symbole [][] Grille;
 	private int [] DirX = {-1,0,1,-1,0,1,-1,0,1};
 	private int [] DirY = {1,1,1,0,0,0,-1,-1,-1};
+	private Joueur JoueurActuel;
 	
 	
 	public JeuxDeGrilles(int nbCol, int nbLig) {
@@ -16,6 +18,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 		this.nbLig=nbLig;
 		this.FinDePartie=false;
 		this.Grille=new Symbole[nbLig][nbCol];
+		this.JoueurActuel=new Joueur(Symbole.J1);
 		InitialisationGrille();
 	}
 	
@@ -93,6 +96,18 @@ public abstract class JeuxDeGrilles implements Jeux {
 		Direction[0]=this.DirX[i];
 		Direction[1]=this.DirY[i];
 		return Direction;
+	}
+	
+	public int getNbLig() {
+		return this.nbLig;
+	}
+	
+	public Joueur getJoueurActuel() {
+		return this.JoueurActuel;
+	}
+	
+	public Symbole getSymboleJoueurActuel() {
+		return this.JoueurActuel.getSymbole();
 	}
 
 }

@@ -23,6 +23,13 @@ public class Morpion extends JeuxDeGrilles {
 	public int getNbJoueurs() {
 		return 2;
 	}
+
+
+	@Override
+	public void JouerCoup(int... coord) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }
