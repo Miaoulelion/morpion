@@ -92,8 +92,11 @@ public abstract class JeuxDeGrilles implements Jeux {
 	}
 	
 	
-	public int [] getDirxY() {
-		return this.DirY;
+	public int [] getDirection(int i) {
+		int [] Direction= new int[2];
+		Direction[0]=this.DirX[i];
+		Direction[1]=this.DirY[i];
+		return Direction;
 	}
 
 }
