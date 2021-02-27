@@ -27,9 +27,8 @@ public class Puissance4 extends JeuxDeGrilles {
 		int numLig=super.getNbLig();
 		while(super.EstOccupé(numCol[0], numLig)) {
 			--numLig;
-		}
+		}//mettre la méthode en boolean et utiliser est autorisé ?
 		super.PlacerPion(numCol[0], numLig, super.getJoueurActuel().getSymbole());
-		
 	}
 
 }

@@ -5,7 +5,7 @@ import jeuxDeGrilles.Puissance4;
 import joueurs.Joueur;
 import joueurs.Symbole;
 
-public class Main {
+public class AppliJeu {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,8 +13,13 @@ public class Main {
 		Jeux Jeu = new Puissance4();
 		int [] Coup = {2};
 		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
 
-		
 		System.out.println(Jeu.toString());
 		/*
 		while(Jeu.getFinDePartie()) {

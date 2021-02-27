@@ -27,8 +27,9 @@ public class Morpion extends JeuxDeGrilles {
 
 	@Override
 	public void JouerCoup(int... coord) {
-		// TODO Auto-generated method stub
-		
+		int numCol=coord[0];
+		int numLig=coord[1];
+		super.PlacerPion(numCol, numLig, super.getSymboleJoueurActuel());
 	}
 	
 
