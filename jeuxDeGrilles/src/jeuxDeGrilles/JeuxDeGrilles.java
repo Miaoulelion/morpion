@@ -106,7 +106,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 				//System.out.println("compteur : "+cpt);
 				if(cpt==nbr) {
 					return true;
-				}
+				}//NE PAS OUBLIER D'ALLER DANS L'AUTRE SENS
 			}
 		}
 		return false;
