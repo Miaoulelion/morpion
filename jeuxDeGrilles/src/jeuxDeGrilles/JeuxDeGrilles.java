@@ -8,8 +8,8 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private int nbCol;
 	private boolean FinDePartie;
 	private Symbole [][] Grille;
-	private int [] DirX = {-1,0,1,-1,0,1,-1,0,1};
-	private int [] DirY = {1,1,1,0,0,0,-1,-1,-1};
+	private int [] DirX = {-1,0,1,-1,1,-1,0,1};
+	private int [] DirY = {1,1,1,0,0,-1,-1,-1};
 	private Joueur JoueurActuel;
 	
 	
@@ -98,11 +98,12 @@ public abstract class JeuxDeGrilles implements Jeux {
 	public boolean estAlignement(int numLig, int numCol, int nbr, Symbole symbole) {
 		for(int i=0;i<8;++i) {
 			int cpt=0;
-			for(int j=1;(this.EstDansGrille(numCol + this.DirY[i]*j, numLig + this.DirX[i]*j)) 
+			for(int j=0;(this.EstDansGrille(numCol + this.DirY[i]*j, numLig + this.DirX[i]*j)) 
 					&& (this.Grille[numLig-1 + this.DirX[i]*j][numCol-1 + this.DirY[i]*j]==symbole)
-					&& (j<=nbr);++j){
+					&& (j<nbr);++j){
 				++cpt;
-				System.out.println(cpt);
+				//System.out.println("col : " + (numCol +this.DirY[i]*j) + " - lig : " + (numLig + this.DirX[i]*j));
+				//System.out.println("compteur : "+cpt);
 				if(cpt==nbr) {
 					return true;
 				}
