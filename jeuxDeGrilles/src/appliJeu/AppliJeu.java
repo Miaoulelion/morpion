@@ -10,15 +10,16 @@ public class AppliJeu {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Joueur J1=new Joueur(Symbole.J1);
-		Jeux Jeu = new Puissance4();
+		Puissance4 Jeu = new Puissance4();
 		int [] Coup = {2};
 		Jeu.JouerCoup(Coup);
 		Jeu.JouerCoup(Coup);
-		Jeu.JouerCoup(Coup);
-		Jeu.JouerCoup(Coup);
-		Jeu.JouerCoup(Coup);
-		Jeu.JouerCoup(Coup);
-		Jeu.JouerCoup(Coup);
+		Jeu.estAlignement(6, 2, 5, Symbole.J1);
+		//Jeu.JouerCoup(Coup);
+		//Jeu.JouerCoup(Coup);
+		//Jeu.JouerCoup(Coup);
+		//Jeu.JouerCoup(Coup);
+		//Jeu.JouerCoup(Coup);
 
 		System.out.println(Jeu.toString());
 		/*

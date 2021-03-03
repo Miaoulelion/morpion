@@ -49,15 +49,16 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	
 	public void PlacerPion(int numCol, int numLig, Symbole Joueur) {
-		if(!EstAutorisé(numCol,numLig)) {
-			throw new IllegalArgumentException("Hors des limites de la grilles ou coup déjà joué.");
-		}
 		this.Grille[numLig-1][numCol-1]=Joueur;
+		//this.estAlignement(numLig, numCol, 10, Joueur);
 	}
 	
 	
 	public boolean EstAutorisé(int numCol, int numLig) {
-		if(EstOccupé(numCol,numLig) || !EstDansGrille(numCol,numLig)) {
+		if(!EstDansGrille(numCol,numLig)) {
+			return false;
+		}
+		else if(EstOccupé(numCol,numLig)) {
 			return false;
 		}
 		else {
@@ -89,6 +90,26 @@ public abstract class JeuxDeGrilles implements Jeux {
 		return this.FinDePartie;
 	}
 	
+	public Symbole getSymboleGrille(int numLig, int numCol) {
+		return this.Grille[numLig-1][numCol-1];
+	}
+	
+	
+	public boolean estAlignement(int numLig, int numCol, int nbr, Symbole symbole) {
+		for(int i=0;i<8;++i) {
+			int cpt=0;
+			for(int j=1;(this.EstDansGrille(numCol + this.DirY[i]*j, numLig + this.DirX[i]*j)) 
+					&& (this.Grille[numLig-1 + this.DirX[i]*j][numCol-1 + this.DirY[i]*j]==symbole)
+					&& (j<=nbr);++j){
+				++cpt;
+				System.out.println(cpt);
+				if(cpt==nbr) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	
 	public int [] getDirection(int i) {
@@ -101,6 +122,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	public int getNbLig() {
 		return this.nbLig;
 	}
+	
 	
 	public Joueur getJoueurActuel() {
 		return this.JoueurActuel;

@@ -21,7 +21,8 @@ public class Puissance4 extends JeuxDeGrilles {
 	@Override
 	public boolean JouerCoup(int...numCol) {
 		int numLig=super.getNbLig();
-		while(super.EstOccupé(numCol[0], numLig)) {
+		while(super.EstDansGrille(numCol[0], numLig) 
+				&& super.EstOccupé(numCol[0], numLig)) {
 			--numLig;
 		}//Si le coup n'est pas autorisé, on renvoie false
 		if(!this.EstAutorisé(numCol[0], numLig)) {
