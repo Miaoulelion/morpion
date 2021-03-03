@@ -11,10 +11,6 @@ public class Puissance4 extends JeuxDeGrilles {
 
 
 	
-
-	
-
-	
 	@Override
 	public boolean estGagné(int numCol, int numLig) {
 		// TODO Auto-generated method stub
@@ -23,12 +19,18 @@ public class Puissance4 extends JeuxDeGrilles {
 
 
 	@Override
-	public void JouerCoup(int...numCol) {
+	public boolean JouerCoup(int...numCol) {
 		int numLig=super.getNbLig();
 		while(super.EstOccupé(numCol[0], numLig)) {
 			--numLig;
-		}//mettre la méthode en boolean et utiliser est autorisé ?
-		super.PlacerPion(numCol[0], numLig, super.getJoueurActuel().getSymbole());
+		}//Si le coup n'est pas autorisé, on renvoie false
+		if(!this.EstAutorisé(numCol[0], numLig)) {
+			return false;
+		}//Si le coup est autorisé on place le pion.
+		else {
+			super.PlacerPion(numCol[0], numLig, super.getJoueurActuel().getSymbole());
+			return true;
+		}
 	}
 
 }

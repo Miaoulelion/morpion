@@ -26,10 +26,17 @@ public class Morpion extends JeuxDeGrilles {
 
 
 	@Override
-	public void JouerCoup(int... coord) {
+	public boolean JouerCoup(int... coord) {
 		int numCol=coord[0];
 		int numLig=coord[1];
-		super.PlacerPion(numCol, numLig, super.getSymboleJoueurActuel());
+		//si le coup est interdit on renvoie false.
+		if(!this.EstAutorisé(numCol, numLig)) {
+			return false;
+		}//Si le coup est autorisé on place le pion.
+		else {
+			super.PlacerPion(numCol, numLig, super.getSymboleJoueurActuel());
+			return true;
+		}
 	}
 	
 
