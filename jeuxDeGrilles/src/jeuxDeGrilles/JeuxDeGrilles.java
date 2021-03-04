@@ -111,6 +111,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 		return nbSymbole;
 	}
 	
+	//attention compte par avance le pion placé
 	public int NbrSymbolesAlignés(int numLig, int numCol, int DirX, int DirY, Symbole symbole) {
 		int nbSymbole=NbrSymbolesAdjDir(numLig, numCol, DirX, DirY, symbole);
 		nbSymbole+=NbrSymbolesAdjDir(numLig, numCol, -DirX, -DirY, symbole);
