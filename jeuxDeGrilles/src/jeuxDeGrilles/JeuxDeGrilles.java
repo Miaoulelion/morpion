@@ -97,12 +97,6 @@ public abstract class JeuxDeGrilles implements Jeux {
 		return true;
 	}
 	
-	public void EstFinDePartie() {
-		if(this.estRemplie()|| this.getVictoire()) {
-			this.FinDePartie=true;
-		}
-		this.FinDePartie=false;
-	}
 	
 	public boolean getVictoire() {
 		return this.estVictoire;
@@ -145,6 +139,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 			int nbSymb=0;
 			nbSymb=NbrSymbolesAlignés(numLig, numCol, this.DirX[i], this.DirY[i], symbole);
 			if(nbSymb>=nbr) {
+				//System.out.println("Aligné !");
 				return true;
 			}
 		}
@@ -153,6 +148,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	protected void setEstVictoire(boolean estAlignement) {
 		this.estVictoire=estAlignement;
+		this.FinDePartie=estAlignement;
 	}
 	
 	public int getNbLig() {
