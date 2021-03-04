@@ -11,10 +11,6 @@ public class Morpion extends JeuxDeGrilles {
 		return 3;
 	}
 	
-	public int getNbJoueurs() {
-		return 2;
-	}
-
 
 	@Override
 	public boolean JouerCoup(int... coord) {
