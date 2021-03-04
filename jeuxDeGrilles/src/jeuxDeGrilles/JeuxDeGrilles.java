@@ -10,6 +10,8 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private Symbole [][] Grille;
 	final private int [] DirX = {0,1,1,1};
 	final private int [] DirY = {-1,-1,0,1};
+	private Joueur J1;
+	private Joueur J2;
 	private Joueur JoueurActuel;
 	private boolean estVictoire;
 	
@@ -19,7 +21,10 @@ public abstract class JeuxDeGrilles implements Jeux {
 		this.nbLig=nbLig;
 		this.FinDePartie=false;
 		this.Grille=new Symbole[nbLig][nbCol];
-		this.JoueurActuel=new Joueur(Symbole.J1);
+		this.J1=new Joueur(Symbole.J1);
+		this.JoueurActuel=this.J1;
+		this.J2=new Joueur(Symbole.J2);
+
 		this.estVictoire=false;
 		InitialisationGrille();
 	}
@@ -121,7 +126,6 @@ public abstract class JeuxDeGrilles implements Jeux {
 		int nbSymbole=0;
 		for(int j=1;(this.EstDansGrille(numCol + DirY*j, numLig + DirX*j)) 
 				&& (this.Grille[numLig-1 + DirX*j][numCol-1 + DirY*j]==symbole);++j){
-			System.out.println("tourne");
 			++nbSymbole;
 		}
 		return nbSymbole;
@@ -139,7 +143,6 @@ public abstract class JeuxDeGrilles implements Jeux {
 			int nbSymb=0;
 			nbSymb=NbrSymbolesAlignés(numLig, numCol, this.DirX[i], this.DirY[i], symbole);
 			if(nbSymb>=nbr) {
-				System.out.println("Aligné !");
 				return true;
 			}
 		}
@@ -166,6 +169,17 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	public Joueur getJoueurActuel() {
 		return this.JoueurActuel;
+	}
+	
+	public void ChangerJoueur() {
+		if(this.JoueurActuel.getSymbole()==Symbole.J1) {
+			this.JoueurActuel=this.J2; //J2
+			System.out.println("bb");
+		}
+		else if(this.JoueurActuel.getSymbole()==Symbole.J2) {
+			this.JoueurActuel=this.J1; //J1
+			System.out.println("bb");
+		}
 	}
 	
 	public Symbole getSymboleJoueurActuel() {

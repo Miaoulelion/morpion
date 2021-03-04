@@ -34,6 +34,7 @@ public class Puissance4 extends JeuxDeGrilles {
 		else {
 			super.PlacerPion(numCol[0], numLig, super.getSymboleJoueurActuel());
 			super.EstFinDePartie(numLig,numCol[0],this.getTailleAlign(), super.getJoueurActuel().getSymbole());
+			super.ChangerJoueur();
 			return true;
 		}
 	}
