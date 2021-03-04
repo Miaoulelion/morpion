@@ -8,8 +8,8 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private int nbCol;
 	private boolean FinDePartie;
 	private Symbole [][] Grille;
-	private int [] DirX = {-1,0,1,-1,1,-1,0,1};
-	private int [] DirY = {1,1,1,0,0,-1,-1,-1};
+	private int [] DirX = {0,1,1,1};
+	private int [] DirY = {-1,-1,0,1};
 	private Joueur JoueurActuel;
 	
 	
@@ -92,6 +92,19 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	public Symbole getSymboleGrille(int numLig, int numCol) {
 		return this.Grille[numLig-1][numCol-1];
+	}
+	
+	
+	public int NbrSymbolesAlignés(int numLig, int numCol, int DirX, int DirY, Symbole symbole) {
+		if(!(DirX==1 || DirX==-1 || DirX==0) && !(DirY==1 || DirY==-1 || DirY==0)) {
+			throw new IllegalArgumentException("La direction donnée en paramètre est invalide : " + DirX + " " + DirY);
+		}
+		int cpt=0;
+		for(int j=1;(this.EstDansGrille(numCol + DirY*j, numLig + DirX*j)) 
+				&& (this.Grille[numLig-1 + DirX*j][numCol-1 + DirY*j]==symbole);++j){
+			++cpt;
+		}
+		return cpt;
 	}
 	
 	

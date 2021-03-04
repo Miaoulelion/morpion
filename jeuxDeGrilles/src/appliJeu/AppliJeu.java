@@ -14,8 +14,10 @@ public class AppliJeu {
 		int [] Coup = {2};
 		Jeu.JouerCoup(Coup);
 		Jeu.JouerCoup(Coup);
-		Jeu.estAlignement(4, 2, 5, Symbole.J1);
-		//Jeu.JouerCoup(Coup);
+		Jeu.JouerCoup(Coup);
+		System.out.println(Jeu.NbrSymbolesAlignés(4, 3, 0, -1, Symbole.J1));
+		
+
 		//Jeu.JouerCoup(Coup);
 		//Jeu.JouerCoup(Coup);
 		//Jeu.JouerCoup(Coup);
