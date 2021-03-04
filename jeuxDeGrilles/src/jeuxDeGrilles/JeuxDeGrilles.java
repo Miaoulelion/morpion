@@ -95,17 +95,27 @@ public abstract class JeuxDeGrilles implements Jeux {
 	}
 	
 	
-	public int NbrSymbolesAlignés(int numLig, int numCol, int DirX, int DirY, Symbole symbole) {
+	//Renvoi sur une direction donnée le nombre de Symboles==Symboles en param alignés
+	//Ne comptabilise pas le Symbole placé ni le sens opposé !
+	public int NbrSymbolesAdjDir(int numLig, int numCol, int DirX, int DirY, Symbole symbole) {
 		if(!(DirX==1 || DirX==-1 || DirX==0) && !(DirY==1 || DirY==-1 || DirY==0)) {
 			throw new IllegalArgumentException("La direction donnée en paramètre est invalide : " + DirX + " " + DirY);
 		}
-		int cpt=0;
+		int nbSymbole=0;
 		for(int j=1;(this.EstDansGrille(numCol + DirY*j, numLig + DirX*j)) 
 				&& (this.Grille[numLig-1 + DirX*j][numCol-1 + DirY*j]==symbole);++j){
-			++cpt;
+			++nbSymbole;
 		}
-		return cpt;
+		
+		return nbSymbole;
 	}
+	
+	public int NbrSymbolesAlignés(int numLig, int numCol, int DirX, int DirY, Symbole symbole) {
+		int nbSymbole=NbrSymbolesAdjDir(numLig, numCol, DirX, DirY, symbole);
+		nbSymbole+=NbrSymbolesAdjDir(numLig, numCol, -DirX, -DirY, symbole);
+		return nbSymbole+1;
+	}
+	
 	
 	
 	public boolean estAlignement(int numLig, int numCol, int nbr, Symbole symbole) {
