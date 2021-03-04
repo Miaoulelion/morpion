@@ -2,16 +2,15 @@ package appliJeu;
 
 import java.util.Scanner;
 
-import jeuxDeGrilles.Puissance4;
-import joueurs.Joueur;
-import joueurs.Symbole;
+import fabriqueJeux.FabriqueJeux;
+import jeuxDeGrilles.Jeux;
 
 public class AppliJeu {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Joueur J1=new Joueur(Symbole.J1);
-		Puissance4 Jeu = new Puissance4();
+
+		Jeux Jeu=FabriqueJeux.FabriqueJeu(args);
+		
 		System.out.println(Jeu.toString());
 		
 		while(!Jeu.getFinDePartie()) {
@@ -20,26 +19,8 @@ public class AppliJeu {
 			int [] Coup= {sc.nextInt()};
 			Jeu.JouerCoup(Coup);
 			System.out.println(Jeu.toString());
-
-			
 			
 		}
-		
-		
-		
-		//Jeu.JouerCoup(Coup);
-		//Jeu.JouerCoup(Coup);
-		//Jeu.JouerCoup(Coup);
-		//Jeu.JouerCoup(Coup);
-
-		System.out.println(Jeu.toString());
-		/*
-		while(Jeu.getFinDePartie()) {
-			
-			
-			
-		}*/
-		
 		
 	}
 

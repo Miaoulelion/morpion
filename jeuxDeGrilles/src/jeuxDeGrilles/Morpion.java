@@ -6,15 +6,6 @@ public class Morpion extends JeuxDeGrilles {
 		super(3, 3);
 	}
 
-
-	public boolean estAlignement(int numCol, int numLig) {
-		return false;
-	}
-	
-
-	public boolean estGagné(int numCol, int numLig) {
-		return false;
-	}
 	
 	public int getTailleAlign() {
 		return 3;
