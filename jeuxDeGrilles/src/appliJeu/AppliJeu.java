@@ -2,7 +2,6 @@ package appliJeu;
 
 import java.util.Scanner;
 
-import jeuxDeGrilles.Jeux;
 import jeuxDeGrilles.Puissance4;
 import joueurs.Joueur;
 import joueurs.Symbole;
