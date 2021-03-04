@@ -121,9 +121,9 @@ public abstract class JeuxDeGrilles implements Jeux {
 		int nbSymbole=0;
 		for(int j=1;(this.EstDansGrille(numCol + DirY*j, numLig + DirX*j)) 
 				&& (this.Grille[numLig-1 + DirX*j][numCol-1 + DirY*j]==symbole);++j){
+			System.out.println("tourne");
 			++nbSymbole;
 		}
-		System.out.println(nbSymbole);
 		return nbSymbole;
 	}
 	
