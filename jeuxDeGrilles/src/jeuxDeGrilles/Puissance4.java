@@ -32,9 +32,8 @@ public class Puissance4 extends JeuxDeGrilles {
 			return false;
 		}//Si le coup est autorisé on place le pion.
 		else {
-			super.PlacerPion(numCol[0], numLig, super.getJoueurActuel().getSymbole());
-			super.setEstVictoire(super.estAlignement(numLig, numCol[0], this.getTailleAlign(), getSymboleJoueurActuel()));
-			
+			super.PlacerPion(numCol[0], numLig, super.getSymboleJoueurActuel());
+			super.EstFinDePartie(numCol[0], numLig,this.getTailleAlign(), super.getJoueurActuel().getSymbole());
 			return true;
 		}
 	}

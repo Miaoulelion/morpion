@@ -123,7 +123,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 				&& (this.Grille[numLig-1 + DirX*j][numCol-1 + DirY*j]==symbole);++j){
 			++nbSymbole;
 		}
-		
+		System.out.println(nbSymbole);
 		return nbSymbole;
 	}
 	
@@ -139,16 +139,24 @@ public abstract class JeuxDeGrilles implements Jeux {
 			int nbSymb=0;
 			nbSymb=NbrSymbolesAlignés(numLig, numCol, this.DirX[i], this.DirY[i], symbole);
 			if(nbSymb>=nbr) {
-				//System.out.println("Aligné !");
+				System.out.println("Aligné !");
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	protected void setEstVictoire(boolean estAlignement) {
-		this.estVictoire=estAlignement;
-		this.FinDePartie=estAlignement;
+	
+	
+	protected void EstFinDePartie(int numLig, int numCol, int nbr, Symbole symbole) {
+		if(this.estAlignement(numLig, numCol, nbr, symbole)) {
+			this.estVictoire=true;
+			this.FinDePartie=true;
+		}
+		else if(this.estRemplie()) {
+			this.estVictoire=false;
+			this.FinDePartie=true;
+		}
 	}
 	
 	public int getNbLig() {
