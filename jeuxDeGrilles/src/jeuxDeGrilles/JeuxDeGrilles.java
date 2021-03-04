@@ -174,11 +174,9 @@ public abstract class JeuxDeGrilles implements Jeux {
 	public void ChangerJoueur() {
 		if(this.JoueurActuel.getSymbole()==Symbole.J1) {
 			this.JoueurActuel=this.J2; //J2
-			System.out.println("bb");
 		}
 		else if(this.JoueurActuel.getSymbole()==Symbole.J2) {
 			this.JoueurActuel=this.J1; //J1
-			System.out.println("bb");
 		}
 	}
 	
