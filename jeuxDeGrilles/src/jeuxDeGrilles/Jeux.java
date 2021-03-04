@@ -1,7 +1,5 @@
 package jeuxDeGrilles;
 
-import joueurs.Symbole;
-
 public interface Jeux {
 	
 	//public void PlacerPion(int numCol, int numLig, Symbole Joueur);

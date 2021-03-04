@@ -1,7 +1,5 @@
 package jeuxDeGrilles;
 
-import joueurs.Symbole;
-
 public class Puissance4 extends JeuxDeGrilles {
 	
 
