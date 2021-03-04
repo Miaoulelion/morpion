@@ -10,6 +10,9 @@ public class Puissance4 extends JeuxDeGrilles {
 	}
 
 
+	public boolean estAlignement(int numCol, int numLig) {
+		return super.estAlignement(numLig, numCol, this.getTailleAlign(), getSymboleJoueurActuel());
+	}
 	
 	@Override
 	public boolean estGagné(int numCol, int numLig) {
@@ -29,9 +32,18 @@ public class Puissance4 extends JeuxDeGrilles {
 			return false;
 		}//Si le coup est autorisé on place le pion.
 		else {
-			super.PlacerPion(numCol[0], numLig, super.getJoueurActuel().getSymbole());
+			super.PlacerPion(numCol[0], numLig, super.getSymboleJoueurActuel());
+			super.EstFinDePartie(numLig,numCol[0],this.getTailleAlign(), super.getJoueurActuel().getSymbole());
+			super.ChangerJoueur();
 			return true;
 		}
+	}
+
+
+	@Override
+	public int getTailleAlign() {
+		// TODO Auto-generated method stub
+		return 4;
 	}
 
 }
