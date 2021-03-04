@@ -119,17 +119,11 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	
 	public boolean estAlignement(int numLig, int numCol, int nbr, Symbole symbole) {
-		for(int i=0;i<8;++i) {
-			int cpt=0;
-			for(int j=0;(this.EstDansGrille(numCol + this.DirY[i]*j, numLig + this.DirX[i]*j)) 
-					&& (this.Grille[numLig-1 + this.DirX[i]*j][numCol-1 + this.DirY[i]*j]==symbole)
-					&& (j<nbr);++j){
-				++cpt;
-				//System.out.println("col : " + (numCol +this.DirY[i]*j) + " - lig : " + (numLig + this.DirX[i]*j));
-				//System.out.println("compteur : "+cpt);
-				if(cpt==nbr) {
-					return true;
-				}//NE PAS OUBLIER D'ALLER DANS L'AUTRE SENS
+		for(int i=0;i<this.DirX.length;++i) {
+			int nbSymb=0;
+			nbSymb=NbrSymbolesAlignés(numLig, numCol, this.DirX[i], this.DirY[i], symbole);
+			if(nbSymb>=nbr) {
+				return true;
 			}
 		}
 		return false;
