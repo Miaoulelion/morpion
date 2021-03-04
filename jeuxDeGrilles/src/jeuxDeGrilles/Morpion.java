@@ -27,6 +27,6 @@ public class Morpion extends JeuxDeGrilles {
 			return true;
 		}
 	}
-	
-
+	//Utiliser instanceof pour vérifier type d'objet
+	//faire une fonction pour saisie à partir de ça
 }

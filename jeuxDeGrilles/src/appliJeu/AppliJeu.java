@@ -21,7 +21,8 @@ public class AppliJeu {
 			System.out.println(Jeu.toString());
 			
 		}
-		
+		//Utiliser instanceof pour vérifier type d'objet
+		//faire une fonction pour saisie à partir de ça
 	}
 
 }
