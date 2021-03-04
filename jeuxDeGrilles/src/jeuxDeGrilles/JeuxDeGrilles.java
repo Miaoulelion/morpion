@@ -11,6 +11,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private int [] DirX = {0,1,1,1};
 	private int [] DirY = {-1,-1,0,1};
 	private Joueur JoueurActuel;
+	private boolean estVictoire;
 	
 	
 	public JeuxDeGrilles(int nbCol, int nbLig) {
@@ -115,8 +116,6 @@ public abstract class JeuxDeGrilles implements Jeux {
 		nbSymbole+=NbrSymbolesAdjDir(numLig, numCol, -DirX, -DirY, symbole);
 		return nbSymbole+1;
 	}
-	
-	
 	
 	public boolean estAlignement(int numLig, int numCol, int nbr, Symbole symbole) {
 		for(int i=0;i<this.DirX.length;++i) {

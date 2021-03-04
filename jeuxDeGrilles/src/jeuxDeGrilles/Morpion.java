@@ -7,7 +7,7 @@ public class Morpion extends JeuxDeGrilles {
 	}
 
 
-	public boolean estAligmenet(int numCol, int numLig) {
+	public boolean estAlignement(int numCol, int numLig) {
 		return false;
 	}
 	
