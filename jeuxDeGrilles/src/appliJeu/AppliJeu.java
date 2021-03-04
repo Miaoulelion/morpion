@@ -21,8 +21,6 @@ public class AppliJeu {
 			Jeu.JouerCoup(Coup);
 			System.out.println(Jeu.toString());
 
-			
-			
 		}
 		
 		
