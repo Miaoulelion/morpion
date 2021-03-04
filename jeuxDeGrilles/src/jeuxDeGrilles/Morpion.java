@@ -34,6 +34,7 @@ public class Morpion extends JeuxDeGrilles {
 			return false;
 		}//Si le coup est autorisé on place le pion.
 		else {
+			super.setEstVictoire(super.estAlignement(numLig, numCol, this.getTailleAlign(), getSymboleJoueurActuel()));
 			super.PlacerPion(numCol, numLig, super.getSymboleJoueurActuel());
 			return true;
 		}

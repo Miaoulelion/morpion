@@ -8,8 +8,8 @@ public abstract class JeuxDeGrilles implements Jeux {
 	private int nbCol;
 	private boolean FinDePartie;
 	private Symbole [][] Grille;
-	private int [] DirX = {0,1,1,1};
-	private int [] DirY = {-1,-1,0,1};
+	final private int [] DirX = {0,1,1,1};
+	final private int [] DirY = {-1,-1,0,1};
 	private Joueur JoueurActuel;
 	private boolean estVictoire;
 	
@@ -20,6 +20,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 		this.FinDePartie=false;
 		this.Grille=new Symbole[nbLig][nbCol];
 		this.JoueurActuel=new Joueur(Symbole.J1);
+		this.estVictoire=false;
 		InitialisationGrille();
 	}
 	
@@ -51,7 +52,6 @@ public abstract class JeuxDeGrilles implements Jeux {
 	
 	public void PlacerPion(int numCol, int numLig, Symbole Joueur) {
 		this.Grille[numLig-1][numCol-1]=Joueur;
-		//this.estAlignement(numLig, numCol, 10, Joueur);
 	}
 	
 	
@@ -84,6 +84,28 @@ public abstract class JeuxDeGrilles implements Jeux {
 		else {
 			return false;
 		}
+	}
+	
+	public boolean estRemplie() {
+		for(int i=0;i<this.nbCol;++i) {
+			for(int j=0;j<this.nbLig;++j) {
+				if(this.Grille[j][i]!=Symbole.Vide) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	public void EstFinDePartie() {
+		if(this.estRemplie()|| this.getVictoire()) {
+			this.FinDePartie=true;
+		}
+		this.FinDePartie=false;
+	}
+	
+	public boolean getVictoire() {
+		return this.estVictoire;
 	}
 	
 	
@@ -129,12 +151,8 @@ public abstract class JeuxDeGrilles implements Jeux {
 		return false;
 	}
 	
-	
-	public int [] getDirection(int i) {
-		int [] Direction= new int[2];
-		Direction[0]=this.DirX[i];
-		Direction[1]=this.DirY[i];
-		return Direction;
+	protected void setEstVictoire(boolean estAlignement) {
+		this.estVictoire=estAlignement;
 	}
 	
 	public int getNbLig() {
