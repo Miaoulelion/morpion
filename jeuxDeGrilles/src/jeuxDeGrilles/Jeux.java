@@ -8,6 +8,7 @@ public interface Jeux {
 	public boolean JouerCoup(int... coord);
 	public boolean estGagné(int numCol, int numLig);
 	public boolean getFinDePartie();
+	public int getTailleAlign();
 	
 
 }
