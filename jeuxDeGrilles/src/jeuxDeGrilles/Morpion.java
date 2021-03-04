@@ -6,24 +6,11 @@ public class Morpion extends JeuxDeGrilles {
 		super(3, 3);
 	}
 
-
-	public boolean estAlignement(int numCol, int numLig) {
-		return false;
-	}
-	
-
-	public boolean estGagné(int numCol, int numLig) {
-		return false;
-	}
 	
 	public int getTailleAlign() {
 		return 3;
 	}
 	
-	public int getNbJoueurs() {
-		return 2;
-	}
-
 
 	@Override
 	public boolean JouerCoup(int... coord) {
@@ -40,6 +27,6 @@ public class Morpion extends JeuxDeGrilles {
 			return true;
 		}
 	}
-	
-
+	//Utiliser instanceof pour vérifier type d'objet
+	//faire une fonction pour saisie à partir de ça
 }

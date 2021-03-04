@@ -13,13 +13,6 @@ public class Puissance4 extends JeuxDeGrilles {
 	}
 	
 	@Override
-	public boolean estGagné(int numCol, int numLig) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
 	public boolean JouerCoup(int...numCol) {
 		int numLig=super.getNbLig();
 		while(super.EstDansGrille(numCol[0], numLig) 
