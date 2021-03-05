@@ -22,13 +22,11 @@ public class AppliJeu {
 			}
 
 			if(Integer.parseInt(args[0])==1) {
-				int Coup [];
-				Coup=ReturnInputUtilisateur(args, Input);
+				int Coup []=ReturnInputUtilisateur(args, Input);
 				Jeu.JouerCoup(Coup);
 			}
 			else if(Integer.parseInt(args[0])==2) {
-				int Coup [];
-				Coup=ReturnInputUtilisateur(args, Input);
+				int Coup []=ReturnInputUtilisateur(args, Input);
 				Jeu.JouerCoup(Coup);
 			}
 			
