@@ -14,7 +14,7 @@ public class FabriqueJeux {
 		if(choix==1) {
 			return new Morpion();
 		}
-		else if(choix==2) {
+		else if(choix==2) { 
 			return new Puissance4();
 		}//Par défaut on renvoie un Morpion();
 		return new Morpion();
