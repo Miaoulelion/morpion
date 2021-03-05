@@ -20,17 +20,9 @@ public class AppliJeu {
 			while(!EstCorrectInputUtilisateur(args, Input)) {
 				Input = sc.nextLine();
 			}
-
-			if(Integer.parseInt(args[0])==1) {
-				int Coup []=ReturnInputUtilisateur(args, Input);
-				Jeu.JouerCoup(Coup);
-			}
-			else if(Integer.parseInt(args[0])==2) {
-				int Coup []=ReturnInputUtilisateur(args, Input);
-				Jeu.JouerCoup(Coup);
-			}
 			
-			//Jeu.JouerCoup(Coup);
+			int Coup []=ReturnInputUtilisateur(args, Input);
+			Jeu.JouerCoup(Coup);
 			System.out.println(Jeu.toString());
 		}
 
@@ -46,7 +38,6 @@ public class AppliJeu {
 		return false;
 	}
 	
-	@SuppressWarnings("null")
 	public static int [] ReturnInputUtilisateur(String[] args, String in) {
 
 		if(Integer.parseInt(args[0])==1 && (EstCorrectInputUtilisateur(args, in))) {
