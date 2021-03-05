@@ -94,7 +94,7 @@ public abstract class JeuxDeGrilles implements Jeux {
 	public boolean estRemplie() {
 		for(int i=0;i<this.nbCol;++i) {
 			for(int j=0;j<this.nbLig;++j) {
-				if(this.Grille[j][i]!=Symbole.Vide) {
+				if(this.Grille[j][i]==Symbole.Vide) {
 					return false;
 				}
 			}
