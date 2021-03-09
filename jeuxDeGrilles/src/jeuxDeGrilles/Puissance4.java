@@ -14,7 +14,10 @@ public class Puissance4 extends JeuxDeGrilles {
 	
 	@Override
 	public boolean JouerCoup(int...numCol) {
-		int numLig=super.getNbLig();
+		if(numCol.length!=1) {
+			throw new IllegalArgumentException("La méthode JouerCoup() demande un seul argument pour un P4");
+		}
+		int numLig=super.getNbLig();//faire une nouvelle méthode pour retrouver la ligne
 		while(super.EstDansGrille(numCol[0], numLig) 
 				&& super.EstOccupé(numCol[0], numLig)) {
 			--numLig;
@@ -33,7 +36,6 @@ public class Puissance4 extends JeuxDeGrilles {
 
 	@Override
 	public int getTailleAlign() {
-		// TODO Auto-generated method stub
 		return 4;
 	}
 

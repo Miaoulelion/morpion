@@ -14,6 +14,9 @@ public class Morpion extends JeuxDeGrilles {
 
 	@Override
 	public boolean JouerCoup(int... coord) {
+		if(coord.length!=2) {
+			throw new IllegalArgumentException("Deux coordonnées doivent être fournies poour jouer un coup");
+		}
 		int numCol=coord[0];
 		int numLig=coord[1];
 		//si le coup est interdit on renvoie false.

@@ -39,7 +39,6 @@ public class AppliJeu {
 	}
 	
 	public static int [] ReturnInputUtilisateur(String[] args, String in) {
-
 		if(Integer.parseInt(args[0])==1 && (EstCorrectInputUtilisateur(args, in))) {
 			int[] out = new int[2];
 			out[0]=Character.getNumericValue(in.charAt(0));
